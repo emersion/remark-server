@@ -8,9 +8,9 @@ const serveStatic = require('serve-static')
 const SpliceStream = require('streams2-splice')
 const MultiStream = require('multistream')
 
-const sourcePath = process.argv[2]
-if (!sourcePath) {
-	console.log('Usage: remark-server source.md')
+const sourcePath = process.argv[2] || 'index.md'
+if (!fs.existsSync(sourcePath)) {
+	console.log(sourcePath + ' doesn\'t exist')
 	process.exit(1)
 }
 
