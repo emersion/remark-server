@@ -1,6 +1,6 @@
 {
   "name": "remark-server",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A CLI tool to serve remark presentations",
   "bin": {
     "remark-server": "./cli.js"
