@@ -23,7 +23,7 @@ const server = http.createServer((req, res) => {
 		const template = fs.createReadStream(templatePath)
 
 		const splice = new SpliceStream('<textarea id="source">', '</textarea>', (s) => {
-			return new stream.Readable().wrap(MultiStream([
+			return new stream.Readable().wrap(new MultiStream([
 				stringStream('<textarea id="source">'),
 				fs.createReadStream(sourcePath),
 				stringStream('</textarea>')
